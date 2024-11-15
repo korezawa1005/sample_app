@@ -38,8 +38,10 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
-
+  
+  # アップロードされたファイルをAWSに保存する
+  config.active_storage.service = :amazon
+  
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
@@ -82,8 +84,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-  # アップロードされたファイルをAWSに保存する
-  config.active_storage.service = :amazon
+  
   
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
