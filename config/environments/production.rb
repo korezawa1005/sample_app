@@ -81,6 +81,9 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
+
+  # アップロードされたファイルをAWSに保存する
+  config.active_storage.service = :amazon
   
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp

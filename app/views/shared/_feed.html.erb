@@ -1,0 +1,8 @@
+<% if @feed_items.any? %>
+  <ol class="microposts">
+    <%= render @feed_items %> <%#@feed_itemsのクラス（Micropost）に基づくパーシャルファイル（_micropost.html.erb）を呼び出している%>
+  </ol>
+  <%= will_paginate @feed_items,
+                    params: { controller: :static_pages, action: :home } %>
+                    <%# 明示的にコントローラーとアクションを指定してあげないと、indexアクションにアクセスしてしまうため %> 
+<% end %>
